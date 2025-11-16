@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+
+      body{
+        background-color:rgb(255, 255, 241) ;
+      } 
+
+      .buttons-style1{
+        height:70px ;
+        width:70px;
+        border-radius:50px;
+        border:none;
+        color:white;
+        font-size:26px;
+        font-family:Arial ;
+        background-color:rgb(255, 126, 206) ;
+        cursor: pointer;
+
+      }
+
+      
+      .buttons-style2{
+        color:rgb(250, 246, 246);
+        font-size:26px;
+        font-family:Arial ;
+        background-color:rgb(255, 200, 239);
+        cursor: pointer;
+        height:70px ;
+        width:70px;
+        border-radius:50px;
+        border:none;
+
+      }
+
+      .clear-button{
+        font-size: 19px;
+      }
+
+      .answer-style{
+        font-family:Arial ;
+        font-size:26px ;
+        color:rgb(255, 70, 184);
+        height:20px ;
+    
+        
+      }
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+  </head>
+  <body>
+
+
+  
+
+
+    <p class=" answer-style js-the-answer "></p> 
+
+
+    <p>
+      <button onclick="updateCalculation('1');" class="buttons-style1">1</button>
+
+      <button onclick="updateCalculation('2');" class="buttons-style1">2</button>
+
+      <button onclick="updateCalculation('3');" class="buttons-style1">3</button>
+
+      <button onclick="updateCalculation(' + ');" class="buttons-style2" >+</button>
+    </p>
+
+    <p>
+      <button onclick="updateCalculation('4');" class="buttons-style1" >4</button>
+
+      <button onclick="updateCalculation('5') " class="buttons-style1" >5</button>
+
+      <button onclick="updateCalculation('6');" class="buttons-style1" >6</button>
+
+      <button onclick="updateCalculation(' - ');
+      " class="buttons-style2">-</button>
+    </p>
+
+    <p>
+      <button onclick="updateCalculation('7');" class="buttons-style1" >7</button>
+
+      <button onclick="updateCalculation('8');" class="buttons-style1" >8</button>
+
+      <button onclick="updateCalculation('9');" class="buttons-style1" >9</button>
+
+      <button onclick="updateCalculation(' * ');" class="buttons-style2">*</button>
+    </p>
+
+    <p>
+
+      <button onclick="updateCalculation('0');" class="buttons-style1" >0</button>
+
+      <button onclick="updateCalculation('.')"class="buttons-style1" >.</button>
+
+      <button onclick=" calculation = eval(calculation);
+      displayCalculation()
+      localStorage.setItem('calculation', calculation)" class="buttons-style1" >=</button>
+
+      <button onclick="updateCalculation(' / ');" class="buttons-style2">/</button>
+
+    </p>
+
+    <p>
+
+      <button onclick=" calculation = '';
+      displayCalculation();
+      localStorage.setItem('calculation', calculation)
+      "class="buttons-style1 clear-button" >Clear</button>
+
+    </p>
+
+
+    <script>
+
+
+      
+       let calculation = localStorage.getItem('calculation') || '';
+      displayCalculation();
+
+      function updateCalculation(value){
+        calculation += value;
+        displayCalculation()
+         localStorage.setItem('calculation',calculation)
+
+      }
+
+
+
+
+
+    function displayCalculation (){
+
+    document.querySelector('.js-the-answer').innerHTML = calculation;
+
+    }
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
