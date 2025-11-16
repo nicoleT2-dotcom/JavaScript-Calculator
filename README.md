@@ -1,2 +1,2 @@
 # JavaScript-Calculator
-JavaScript calculator-earliest version to latest
+JavaScript calculator-earliest version to latest (latest version is styled and interactive)
